@@ -334,6 +334,167 @@ body::before {
 .repo-cta .arrow { transition: transform 0.18s ease; display: inline-block; }
 .repo-cta:hover .arrow { transform: translate(3px, -3px); }
 
+/* ── Current Research section ─────────────────── */
+.research {
+  padding: 5.5rem 0 4rem;
+  display: grid;
+  grid-template-columns: 7rem 1fr;
+  gap: 2.5rem;
+  border-bottom: 1px solid var(--rule);
+}
+@media (max-width: 760px) {
+  .research { grid-template-columns: 1fr; gap: 1rem; padding: 3rem 0 2.5rem; }
+}
+.research .stamp {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+  padding-top: 1.6rem;
+  font-weight: 500;
+}
+.research .body { max-width: 70ch; min-width: 0; }
+
+.research .lab {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-bottom: 1.25rem;
+}
+.research .lab .sep { color: var(--accent); margin: 0 0.5em; }
+
+.research h2 {
+  font-family: 'Fraunces', serif;
+  font-weight: 380;
+  font-variation-settings: "opsz" 100;
+  font-size: clamp(2rem, 4.4vw, 3.2rem);
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+  color: var(--ink);
+  margin-bottom: 1.4rem;
+}
+.research h2 .em {
+  font-style: italic;
+  font-weight: 320;
+}
+
+.research p {
+  font-size: 1.05rem;
+  color: var(--ink-2);
+  margin-bottom: 1.05rem;
+}
+.research p strong { color: var(--ink); font-weight: 600; }
+
+.research .venue {
+  margin-top: 1.4rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  padding: 0.55rem 0.95rem;
+  border: 1px dashed var(--rule-strong);
+}
+.research .venue .accent { color: var(--accent); }
+.research .venue a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px dotted var(--rule-strong);
+  padding-bottom: 1px;
+  transition: color 0.18s ease, border-color 0.18s ease;
+}
+.research .venue a:hover {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+/* ── Smaller projects ────────────────────────── */
+.smaller {
+  padding: 4.5rem 0 3rem;
+  display: grid;
+  grid-template-columns: 7rem 1fr;
+  gap: 2.5rem;
+}
+@media (max-width: 760px) {
+  .smaller { grid-template-columns: 1fr; gap: 1rem; padding: 3rem 0 2rem; }
+}
+.smaller .stamp {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+  padding-top: 1.4rem;
+  font-weight: 500;
+}
+.smaller .cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+}
+@media (max-width: 760px) {
+  .smaller .cards { grid-template-columns: 1fr; gap: 2rem; }
+}
+.minor-card {
+  border-top: 1px solid var(--rule-strong);
+  padding-top: 1.4rem;
+}
+.minor-card h3 {
+  font-family: 'Fraunces', serif;
+  font-weight: 440;
+  font-variation-settings: "opsz" 60;
+  font-size: 1.45rem;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin-bottom: 0.7rem;
+}
+.minor-card h3 .em {
+  font-style: italic;
+  font-weight: 380;
+}
+.minor-card .tags {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.66rem;
+  letter-spacing: 0.08em;
+  color: var(--ink-soft);
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  line-height: 1.65;
+}
+.minor-card .tags .pipe { color: var(--accent); margin: 0 0.4em; }
+.minor-card p {
+  font-size: 0.95rem;
+  color: var(--ink-2);
+  margin-bottom: 1rem;
+  line-height: 1.55;
+}
+.minor-card .link {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 1px;
+  font-weight: 500;
+}
+.minor-card .link:hover { color: var(--accent-deep); }
+.minor-card .muted {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  font-weight: 500;
+}
+
 /* ── Footer ────────────────────────────────────── */
 .footer {
   margin-top: 5rem;
@@ -401,13 +562,43 @@ body::before {
       </div>
     </div>
     <div class="meta">
-      <strong>Six selected projects</strong> spanning vision–language models, reinforcement learning, computer vision, and metaheuristic optimization. Ordered most recent first.
+      <strong>MSc&nbsp;AI researcher</strong> at Mila &amp; McGill, with a focus on Vision–Language–Action models, reinforcement learning, and embodied AI. Selected research and engineering work below, ordered most recent first.
       <hr class="meta-rule">
       <a href="https://github.com/Kuzcop" target="_blank" rel="noopener">github.com/Kuzcop ↗</a>
     </div>
   </header>
 
-  <!-- ─── Index strip ────────────────────────── -->
+  <!-- ─── Index strip · Research ──────────────── -->
+  <div class="index">
+    <span>Research</span>
+    <span><span class="arrow">‡</span>&nbsp;&nbsp;Current &amp; published</span>
+  </div>
+
+  <!-- ─── Current Thesis Research ──────────────── -->
+  <section class="research reveal">
+    <div class="stamp">In&nbsp;Progress</div>
+    <div class="body">
+      <div class="lab">Mila <span class="sep">/</span> McGill iSMART Lab <span class="sep">/</span> 2026—</div>
+      <h2>Collision-Aware End-to-End Autonomous Driving in <span class="em">Long-Tail Scenarios</span></h2>
+      <p>Thesis research under Prof. Narges Armanfard, applying <strong>Vision–Language–Action models</strong> to safety-critical autonomous driving. The work develops a multi-modal perception pipeline that fuses camera, LiDAR, and ego-action signals, then applies post-training, supervised fine-tuning followed by reinforcement learning, to improve action generation in the rare, hazardous events where standard imitation-trained policies tend to fail from temporal confusion.</p>
+      <p>Validation runs in <strong>CARLA</strong> across long-tail driving scenarios. Code and full results are not yet public; manuscript in preparation.</p>
+      <span class="venue"><span class="accent">↗</span> Targeting NeurIPS / ICML</span>
+    </div>
+  </section>
+
+  <!-- ─── Published Undergraduate Research ─────── -->
+  <section class="research reveal">
+    <div class="stamp">Published</div>
+    <div class="body">
+      <div class="lab">Systems Engineering Lab <span class="sep">/</span> Undergraduate Research</div>
+      <h2>Inventory Management via <span class="em">Demand-Conditioned Reinforcement Learning</span></h2>
+      <p>Trained on- and off-policy RL agents (<strong>SAC and PPO</strong>) as inventory management policies in a simulated grocery store, with custom reward models synthesized from per-product time-series customer demand data. The methodological contribution: grounding agent rewards in realistic demand signals rather than synthetic reward shaping, so the learned policies reflect actual purchasing behaviour.</p>
+      <p>The framework reduced simulated food waste by up to <strong>92%</strong> and increased store profit by up to <strong>340%</strong> over baseline policies.</p>
+      <span class="venue"><span class="accent">✓</span> <a href="https://journals.sagepub.com/doi/10.1177/00375497241299054" target="_blank" rel="noopener">SIMULATION 2025</a> · <a href="https://ieeexplore.ieee.org/document/10155225" target="_blank" rel="noopener">ANNSIM 2023</a></span>
+    </div>
+  </section>
+
+  <!-- ─── Index strip · Selected Works ────────── -->
   <div class="index">
     <span>Selected Works</span>
     <span><span class="arrow">↓</span>&nbsp;&nbsp;Most recent first</span>
@@ -423,24 +614,50 @@ body::before {
       </div>
       <p>An end-to-end pipeline for grounded instruction-following in wheel-loader operation. The system runs YOLO-World detection over dashcam frames, formats the detections into a scene-grounding prompt, and feeds that into a LoRA-fine-tuned LLaMA&nbsp;3.2&nbsp;1B to produce contextual responses to commands like <em>"Where should I go next?"</em> or <em>"Go to the nearest pile and fill the bucket."</em></p>
       <p>The data pipeline auto-generates VQA training pairs by passing verified pile-detection frames through GPT-4o, then converts the resulting JSONL into HuggingFace dataset format for LoRA fine-tuning. The full inference path produces both annotated frames and structured JSON describing the scene and the model's grounded response.</p>
-      <div class="note">
-        <span class="label">↗ Training Run</span>
-        Full training metrics, loss curves, and qualitative samples are published in the WandB report — <a href="https://wandb.ai/aman-sidhu-mcgill-university/vlam-wheel-loader/reports/Sensmore-VLA-Case-Study--VmlldzoxNTkzNzMyNA?accessToken=825ki9nqt7gg5po7twdbsxnriog89te14qksz6viq7uo09j5lkoyavr6ctz4vyhj" target="_blank" rel="noopener">vlam-wheel-loader / Sensmore VLA Case Study</a>.
+      <div class="figs">
+        <figure class="fig">
+          <img src="https://github.com/user-attachments/assets/6d94b936-4831-4ce2-88bd-1eef24413e5e" alt="Sample VLA output" loading="lazy">
+          <figcaption><span class="label">Fig 1.1</span>Sample VLA output highlighting pile detection and action output to "Identify and move to nearest pile"</figcaption>
+        </figure>
       </div>
       <a class="repo-cta" href="https://github.com/Kuzcop/VLA_case_study" target="_blank" rel="noopener">View Repository <span class="arrow">↗</span></a>
     </div>
   </section>
 
-  <!-- ─── 02 · GRPO ───────────────────────────── -->
+  <!-- ─── 02 · DORAEMON GMM ────────────────────── -->
   <section class="project reveal">
     <div class="num">02</div>
+    <div class="body">
+      <h2>Multimodal Domain Randomization via <span class="em">Gaussian Mixture Entropy Maximization</span></h2>
+      <div class="tags">
+        Python <span class="pipe">·</span> PyTorch <span class="pipe">·</span> MuJoCo <span class="pipe">·</span> Domain Randomization <span class="pipe">·</span> Sim-to-Real
+      </div>
+      <p>DORAEMON's approach to domain randomization uses a constrained optimization that balances entropy maximization against target-environment success rate, with parameters modeled by Beta distributions. I extended the framework with <strong>multimodal distributions via a Gaussian mixture model (GMM)</strong>, dynamically adapting means, covariances, and mixing coefficients to give the parameter distribution greater expressiveness, particularly useful when the optimal randomization is not well-described by a single unimodal family.</p>
+      <p>Results show <strong>up to 10% success-rate gain</strong> and faster learning across MuJoCo control benchmarks compared to Beta-DORAEMON and standard baselines.</p>
+      <p>Code and full results are not yet public; manuscript in preparation.</p>
+      <div class="note">
+        <span class="label">↗ MuJoCo Evaluations</span>
+        Comparison of GMM-DORAEMON against Beta-DORAEMON and baselines across benchmark MuJoCo control environments — <a href="https://api.wandb.ai/links/aman-sidhu-mcgill-university/owqb9pwk" target="_blank" rel="noopener">WandB report: GMM-DORAEMON Early Results</a>.
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── 03 · GRPO ───────────────────────────── -->
+  <section class="project reveal">
+    <div class="num">03</div>
     <div class="body">
       <h2>Group Relative Policy Optimization on <span class="em">Countdown</span></h2>
       <div class="tags">
         Python <span class="pipe">·</span> Qwen2.5-1.5B <span class="pipe">·</span> GRPO <span class="pipe">·</span> RL <span class="pipe">·</span> HuggingFace <span class="pipe">·</span> WandB
       </div>
-      <p>A from-scratch reimplementation of Group Relative Policy Optimization — the RL algorithm popularized by DeepSeek-R1 — applied to a Qwen2.5-1.5B language model on the Countdown number-puzzle reasoning task. The setup: given a target integer and a small set of operands, the model must output a sequence of arithmetic operations that reach the target.</p>
-      <p>Includes a configurable dataset generator (operand count, target range, sample size), a flexible training script supporting both HuggingFace and JSON dataset modes, and full hyperparameter exposure for ε, β, μ, batch size, generation count, and learning rate.</p>
+      <p>A from-scratch reimplementation of <strong>Group Relative Policy Optimization</strong>, the RL post-training algorithm popularized by DeepSeek-R1, applied to a Qwen2.5-1.5B-Instruct model on the Countdown number-puzzle reasoning task. The setup: given a target integer and a small set of operands, the model must output a sequence of arithmetic operations that reach the target.</p>
+      <p>The implementation reaches a peak test accuracy of <strong>11% (G=3), more than 2× the 5% baseline</strong>, with a group-size ablation across G∈{3,4,5}. Training exhibits the volatility characteristic of small-model RL on hard reasoning tasks, a useful empirical signal of where the algorithm is and isn't stable at this scale.</p>
+      <div class="figs">
+        <figure class="fig">
+          <img src="./accuracy_plot.png" alt="GRPO test mean accuracy across training steps, by group size" loading="lazy">
+          <figcaption><span class="label">Fig 3.1</span>Test mean accuracy across training, by group size G. Dashed line is the zero-shot baseline.</figcaption>
+        </figure>
+      </div>
       <div class="note">
         <span class="label">// Training command</span>
         <code>python scripts/train.py --base-model=Qwen/Qwen2.5-1.5B --dataset-type=HF --output-dir=./output</code>
@@ -449,92 +666,35 @@ body::before {
     </div>
   </section>
 
-  <!-- ─── 03 · 551 Reddit ──────────────────────── -->
-  <section class="project reveal">
-    <div class="num">03</div>
-    <div class="body">
-      <h2>Cross-Lingual <span class="em">Reddit Subreddit</span> Classification</h2>
-      <div class="tags">
-        Python <span class="pipe">·</span> NLTK <span class="pipe">·</span> spaCy <span class="pipe">·</span> scikit-learn <span class="pipe">·</span> SVM <span class="pipe">·</span> SGD <span class="pipe">·</span> Naive&nbsp;Bayes
-      </div>
-      <p>Four-way classification of 1,400 Reddit posts to one of <strong>Montreal, Melbourne, London, or Paris</strong>. The corpus is mixed English (≈74%) and French (≈26%), so the preprocessing pipeline language-detects each sample and applies the matching lemmatizer (WordNet for English, French LEFFF for French) along with combined NLTK + spaCy stopword removal across both languages.</p>
-      <p>Four models were compared: <strong>Naive Bayes implemented from scratch</strong> with no ML libraries, plus Logistic Regression, linear SVM, and SGD with Huber loss. SGD-Huber and SVM tied at the top with mean 10-fold validation errors of 28.6% and 28.4%, with SGD edging ahead at <strong>72.8% accuracy</strong> on the Kaggle leaderboard.</p>
-      <div class="figs two">
-        <figure class="fig">
-          <img src="https://github.com/Kuzcop/551_Text_Classification_Reddit/raw/main/misc/cm.png" alt="Confusion matrices for the four classifiers" loading="lazy">
-          <figcaption><span class="label">Fig 3.1</span>Confusion matrices across all four classifiers.</figcaption>
-        </figure>
-        <figure class="fig">
-          <img src="https://github.com/Kuzcop/551_Text_Classification_Reddit/raw/main/misc/acc.png" alt="Per-fold validation accuracy" loading="lazy">
-          <figcaption><span class="label">Fig 3.2</span>Validation accuracy by model and fold.</figcaption>
-        </figure>
-      </div>
-      <a class="repo-cta" href="https://github.com/Kuzcop/551_Text_Classification_Reddit" target="_blank" rel="noopener">View Repository <span class="arrow">↗</span></a>
-    </div>
-  </section>
+  <!-- ─── Index strip · Engineering & Exploration ─ -->
+  <div class="index">
+    <span>Engineering &amp; Exploration</span>
+    <span><span class="arrow">∗</span></span>
+  </div>
 
-  <!-- ─── 04 · Snake ──────────────────────────── -->
-  <section class="project reveal">
-    <div class="num">04</div>
-    <div class="body">
-      <h2>Snake with <span class="em">Tabular Q-Learning</span> from Scratch</h2>
-      <div class="tags">
-        Summer&nbsp;2023 <span class="pipe">·</span> Python <span class="pipe">·</span> Pygame <span class="pipe">·</span> Gymnasium <span class="pipe">·</span> Stable-Baselines3 <span class="pipe">·</span> PPO <span class="pipe">·</span> A2C
-      </div>
-      <p>A self-directed RL playground. The environment, written from scratch in Pygame and wrapped to the OpenAI Gymnasium interface, allows the same training harness to swap between a custom tabular Q-learning agent and Stable-Baselines3's A2C and PPO. State is encoded as the apple's quadrant (8 directions) plus three boolean wall/body danger flags around the head; actions are turn-left / continue / turn-right.</p>
-      <p>The reward function is intentionally minimal: <strong>+100</strong> for eating the apple, <strong>−1</strong> per step (to encourage efficiency), and <strong>−500</strong> for any collision. After 500 training episodes, the tabular Q-learning agent reaches <strong>51 points</strong> in evaluation.</p>
-      <div class="figs">
-        <figure class="fig">
-          <img src="https://github.com/Kuzcop/snake/raw/main/misc/snake_game.gif" alt="Q-learning Snake agent gameplay" loading="lazy">
-          <figcaption><span class="label">Fig 4.1</span>Q-learning agent gameplay after 500 training episodes.</figcaption>
-        </figure>
-      </div>
-      <a class="repo-cta" href="https://github.com/Kuzcop/snake" target="_blank" rel="noopener">View Repository <span class="arrow">↗</span></a>
-    </div>
-  </section>
+  <!-- ─── Smaller projects ───────────────────────── -->
+  <section class="smaller reveal">
+    <div class="stamp">Side&nbsp;Work</div>
+    <div class="cards">
 
-  <!-- ─── 05 · Metaheuristics ─────────────────── -->
-  <section class="project reveal">
-    <div class="num">05</div>
-    <div class="body">
-      <h2>Trajectory Metaheuristics for <span class="em">CNN Hyperparameters</span></h2>
-      <div class="tags">
-        Python <span class="pipe">·</span> TensorFlow <span class="pipe">·</span> Tabu&nbsp;Search <span class="pipe">·</span> Simulated&nbsp;Annealing <span class="pipe">·</span> Iterated&nbsp;Local&nbsp;Search <span class="pipe">·</span> CIFAR-10
+      <div class="minor-card">
+        <h3>McGill Robotics — <span class="em">Mars Rover</span></h3>
+        <div class="tags">
+          Software Lead · 6 yrs <span class="pipe">·</span> ROS2&nbsp;Humble <span class="pipe">·</span> Jetson&nbsp;Orin&nbsp;Nano <span class="pipe">·</span> Docker <span class="pipe">·</span> RealSense2
+        </div>
+        <p>Software Lead on a teleoperated Mars rover competing in the Canadian International Rover Competition (CIRC). The role has given me end-to-end familiarity with the <strong>ROS2 + embedded development</strong>: containerized builds, Jetson and Raspberry Pi deployment, multi-sensor integration for obstacle detection and localization, and coordination with the mechanical, electrical, and science divisions to meet system requirements. I also mentor 15+ undergraduates through weekly worksessions, and delivered workshops on ML and robotics fundamentals.</p>
+        <span class="muted">McGill University · Montreal</span>
       </div>
-      <p>From-scratch implementations of <strong>Tabu Search</strong>, <strong>Simulated Annealing</strong>, and <strong>Iterated Local Search</strong> applied to the architectural hyperparameters of an image-classification CNN trained on CIFAR-10. The objective balances accuracy against test-time latency:</p>
-      <p class="equation">Objective&nbsp;=&nbsp;(Accuracy²)&nbsp;/&nbsp;Latency</p>
-      <p>Each metaheuristic improved on the default hyperparameters along both axes. ILS produced the best overall result: <strong>+4 percentage-point accuracy gain</strong> (68% → 72%) and <strong>16.3% latency reduction</strong>. Simulated Annealing converged to comparable latency in a fraction of the wall-clock time — pointing to a useful intensification/diversification trade-off, where ILS and TS were needed for accuracy gains but SA alone was sufficient when latency was the priority.</p>
-      <div class="figs two">
-        <figure class="fig">
-          <img src="https://github.com/Kuzcop/541/raw/main/misc/dp.png" alt="Optimization pipeline overview" loading="lazy">
-          <figcaption><span class="label">Fig 5.1</span>Optimization pipeline overview.</figcaption>
-        </figure>
-        <figure class="fig">
-          <img src="https://github.com/Kuzcop/541/raw/main/misc/results.png" alt="Final accuracy and latency by metaheuristic" loading="lazy">
-          <figcaption><span class="label">Fig 5.2</span>Final accuracy &amp; latency by metaheuristic.</figcaption>
-        </figure>
-      </div>
-      <a class="repo-cta" href="https://github.com/Kuzcop/541" target="_blank" rel="noopener">View Repository <span class="arrow">↗</span></a>
-    </div>
-  </section>
 
-  <!-- ─── 06 · Traffic Counting ───────────────── -->
-  <section class="project reveal">
-    <div class="num">06</div>
-    <div class="body">
-      <h2>Dashcam <span class="em">Traffic Counting</span> with YOLO &amp; Optical Flow</h2>
-      <div class="tags">
-        Python <span class="pipe">·</span> OpenCV <span class="pipe">·</span> YOLOv8 <span class="pipe">·</span> Farneback&nbsp;Flow <span class="pipe">·</span> K-Means
+      <div class="minor-card">
+        <h3>Snake with <span class="em">Tabular Q-Learning</span></h3>
+        <div class="tags">
+          Self-Project · Summer 2023 <span class="pipe">·</span> Python <span class="pipe">·</span> Pygame <span class="pipe">·</span> Gymnasium <span class="pipe">·</span> Stable-Baselines3
+        </div>
+        <p>A self-directed dive into RL: a Pygame Snake environment wrapped to the Gymnasium interface, with a custom tabular Q-learning agent reaching 51 points after 500 episodes, plus drop-in support for Stable-Baselines3's PPO and A2C. The earliest piece of self-driven RL work in my portfolio, and the curiosity thread that eventually led to the my research at the iSMART lab.</p>
+        <a class="link" href="https://github.com/Kuzcop/snake" target="_blank" rel="noopener">View Repository ↗</a>
       </div>
-      <p>A computer vision pipeline that counts <strong>moving cars, parked cars, and pedestrians</strong> from real-world dashcam footage shot in downtown Montreal. YOLOv8 handles detection and tracking; bounding-box position thresholds (40% of screen for people, 26.5% for cars) decide when an object has been "passed" — calibrated to balance recall against double-counting under occlusion.</p>
-      <p>Moving-vs-parked classification runs in two stages. An initial guess uses screen-region heuristics — moving cars travel down the centre lane, parked cars line the curb. The refinement stage applies <strong>K-Means (K=2)</strong> on Farneback optical-flow magnitudes, exploiting the consistent ordering <code>flow(same-dir) &lt; flow(parked) &lt; flow(opposite-dir)</code>, with the heuristic guess seeding the cluster initialization. Final grade: <strong>93%</strong>.</p>
-      <div class="figs">
-        <figure class="fig">
-          <img src="https://github.com/Kuzcop/415_Traffic_Counting/raw/main/optical_flow.gif" alt="Optical flow visualization on dashcam clip" loading="lazy">
-          <figcaption><span class="label">Fig 6.1</span>Optical-flow visualization on the McGill Drive clip.</figcaption>
-        </figure>
-      </div>
-      <a class="repo-cta" href="https://github.com/Kuzcop/415_Traffic_Counting" target="_blank" rel="noopener">View Repository <span class="arrow">↗</span></a>
+
     </div>
   </section>
 
