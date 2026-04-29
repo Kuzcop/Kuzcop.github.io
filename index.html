@@ -1,0 +1,568 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aman Sidhu — Selected Works</title>
+<meta name="description" content="Selected machine learning and robotics projects by Aman Sidhu (Kuzcop on GitHub).">
+<meta property="og:title" content="Aman Sidhu — Selected Works">
+<meta property="og:description" content="Six selected projects in ML, robotics, computer vision, and reinforcement learning.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Geist:wght@300..700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg: #e9e2d2;
+  --bg-warm: #f1ecdf;
+  --bg-deep: #ddd5c1;
+  --ink: #0e0b07;
+  --ink-2: #2d281f;
+  --ink-soft: #5e574a;
+  --ink-faint: #a89d86;
+  --accent: #b8451f;
+  --accent-deep: #8d2c0f;
+  --rule: rgba(14, 11, 7, 0.14);
+  --rule-strong: rgba(14, 11, 7, 0.32);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-text-size-adjust: 100%; }
+html, body { background: var(--bg); color: var(--ink); }
+
+body {
+  font-family: 'Geist', system-ui, -apple-system, sans-serif;
+  font-weight: 400;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+img { display: block; max-width: 100%; height: auto; }
+a { color: inherit; text-decoration: none; }
+em { font-style: italic; }
+
+/* ── Subtle paper grain ─────────────────────────── */
+body::before {
+  content: '';
+  position: fixed; inset: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(rgba(14, 11, 7, 0.06) 1px, transparent 1px);
+  background-size: 4px 4px;
+  opacity: 0.4;
+  z-index: 1;
+  mix-blend-mode: multiply;
+}
+
+/* ── Layout ─────────────────────────────────────── */
+.shell {
+  position: relative;
+  z-index: 2;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 1.75rem 2.5rem 5rem;
+}
+@media (max-width: 760px) {
+  .shell { padding: 1.25rem 1.25rem 3.5rem; }
+}
+
+/* ── Top bar ────────────────────────────────────── */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--rule);
+}
+.topbar .dot { color: var(--accent); margin: 0 0.4em; }
+.topbar .right { display: flex; gap: 0.6em; align-items: baseline; }
+
+/* ── Hero ───────────────────────────────────────── */
+.hero {
+  padding: 5rem 0 4rem;
+  display: grid;
+  grid-template-columns: 1.45fr 1fr;
+  gap: 3rem;
+  align-items: end;
+}
+@media (max-width: 900px) {
+  .hero { grid-template-columns: 1fr; gap: 2.5rem; padding: 3rem 0 2rem; }
+}
+
+.hero h1 {
+  font-family: 'Fraunces', serif;
+  font-weight: 350;
+  font-variation-settings: "opsz" 144, "SOFT" 50;
+  font-size: clamp(4.2rem, 14vw, 12.5rem);
+  line-height: 0.9;
+  letter-spacing: -0.04em;
+  color: var(--ink);
+}
+.hero h1 .last {
+  font-style: italic;
+  font-weight: 280;
+  font-variation-settings: "opsz" 144, "SOFT" 100;
+  letter-spacing: -0.03em;
+}
+.hero h1 .accent { color: var(--accent); font-style: normal; }
+
+.hero .tagline {
+  margin-top: 1.75rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+.hero .tagline .x { color: var(--accent); margin: 0 0.5em; font-weight: 500; }
+
+.hero .meta {
+  font-size: 1.02rem;
+  line-height: 1.55;
+  color: var(--ink-2);
+  max-width: 34ch;
+}
+.hero .meta strong { font-weight: 600; color: var(--ink); }
+.hero .meta-rule {
+  margin: 1.4rem 0 1.2rem;
+  border: 0;
+  border-top: 1px solid var(--rule-strong);
+  width: 3rem;
+}
+.hero .meta a {
+  display: inline-flex; align-items: center; gap: 0.3rem;
+  color: var(--accent);
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 1px;
+  font-weight: 500;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.82rem;
+}
+.hero .meta a:hover { color: var(--accent-deep); }
+
+/* ── Index strip ────────────────────────────────── */
+.index {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-top: 2rem;
+  padding: 1rem 0;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+.index .arrow { color: var(--accent); }
+
+/* ── Project sections ───────────────────────────── */
+.project {
+  padding: 5.5rem 0 3.5rem;
+  display: grid;
+  grid-template-columns: 7rem 1fr;
+  gap: 2.5rem;
+  border-bottom: 1px solid var(--rule);
+}
+@media (max-width: 760px) {
+  .project { grid-template-columns: 1fr; gap: 1rem; padding: 3rem 0 2rem; }
+}
+.project:last-of-type { border-bottom: 0; }
+
+.project .num {
+  font-family: 'Fraunces', serif;
+  font-weight: 320;
+  font-variation-settings: "opsz" 144;
+  font-style: italic;
+  font-size: 5.5rem;
+  line-height: 0.9;
+  color: var(--accent);
+  letter-spacing: -0.03em;
+}
+@media (max-width: 760px) {
+  .project .num { font-size: 3.2rem; }
+}
+
+.project .body { max-width: 70ch; min-width: 0; }
+
+.project h2 {
+  font-family: 'Fraunces', serif;
+  font-weight: 420;
+  font-variation-settings: "opsz" 80;
+  font-size: clamp(1.85rem, 3.8vw, 2.85rem);
+  line-height: 1.05;
+  letter-spacing: -0.022em;
+  color: var(--ink);
+  margin-bottom: 1rem;
+}
+.project h2 .em {
+  font-style: italic;
+  font-weight: 380;
+  font-variation-settings: "opsz" 80, "SOFT" 50;
+}
+
+.project .tags {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  color: var(--ink-soft);
+  margin-bottom: 1.75rem;
+  text-transform: uppercase;
+  line-height: 1.7;
+}
+.project .tags .pipe { color: var(--accent); margin: 0 0.5em; }
+
+.project p {
+  font-size: 1.02rem;
+  color: var(--ink-2);
+  margin-bottom: 1.05rem;
+}
+.project p strong { color: var(--ink); font-weight: 600; }
+.project p code {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.84em;
+  padding: 0.1em 0.35em;
+  background: var(--bg-warm);
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+  color: var(--ink);
+}
+
+.equation {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.94rem;
+  padding: 0.7rem 1.1rem;
+  background: var(--bg-warm);
+  border-left: 2px solid var(--accent);
+  display: inline-block;
+  margin: 0.4rem 0 1.2rem;
+  color: var(--ink);
+}
+
+/* ── Figures ───────────────────────────────────── */
+.figs {
+  margin: 2rem 0 1rem;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+}
+.figs.two { grid-template-columns: 1fr 1fr; }
+@media (max-width: 760px) {
+  .figs.two { grid-template-columns: 1fr; }
+}
+.fig {
+  background: var(--bg-warm);
+  border: 1px solid var(--rule);
+  padding: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+.fig img {
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--rule);
+  background: var(--bg-deep);
+}
+.fig figcaption {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.66rem;
+  letter-spacing: 0.08em;
+  color: var(--ink-soft);
+  padding: 0.1rem 0.25rem 0.1rem;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+.fig figcaption .label {
+  color: var(--accent);
+  margin-right: 0.5rem;
+  font-weight: 500;
+}
+
+/* ── Inline note block (when no figures available) ── */
+.note {
+  margin: 1.6rem 0 0.5rem;
+  padding: 1.2rem 1.4rem;
+  background: var(--bg-warm);
+  border-left: 2px solid var(--accent);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78rem;
+  line-height: 1.7;
+  color: var(--ink-2);
+}
+.note .label {
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.64rem;
+  color: var(--accent);
+  margin-bottom: 0.6rem;
+  font-weight: 500;
+}
+.note a {
+  color: var(--accent);
+  border-bottom: 1px solid currentColor;
+  word-break: break-word;
+}
+.note code { color: var(--ink); }
+
+/* ── Repo CTA ──────────────────────────────────── */
+.repo-cta {
+  margin-top: 1.75rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.74rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink);
+  padding: 0.7rem 1.1rem;
+  background: transparent;
+  border: 1px solid var(--ink);
+  font-weight: 500;
+  transition: all 0.18s ease;
+}
+.repo-cta:hover { background: var(--ink); color: var(--bg); }
+.repo-cta .arrow { transition: transform 0.18s ease; display: inline-block; }
+.repo-cta:hover .arrow { transform: translate(3px, -3px); }
+
+/* ── Footer ────────────────────────────────────── */
+.footer {
+  margin-top: 5rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--rule);
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+.footer a {
+  color: var(--accent);
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 1px;
+}
+.footer a:hover { color: var(--accent-deep); }
+
+/* ── Reveal-on-scroll (only when JS active) ───── */
+.js .reveal { opacity: 0; transform: translateY(14px); }
+.js .reveal.in {
+  opacity: 1;
+  transform: none;
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+@media (prefers-reduced-motion: reduce) {
+  .js .reveal { opacity: 1; transform: none; }
+}
+
+/* ── Selection ────────────────────────────────── */
+::selection { background: var(--accent); color: var(--bg); }
+</style>
+</head>
+<body>
+<script>document.documentElement.classList.add('js');</script>
+
+<div class="shell">
+
+  <!-- ─── Top bar ─────────────────────────────── -->
+  <div class="topbar">
+    <span>Portfolio<span class="dot">№</span>01</span>
+    <span class="right">
+      <span>Aman Sidhu</span>
+      <span class="dot">/</span>
+      <span>Kuzcop</span>
+      <span class="dot">/</span>
+      <span>2026</span>
+    </span>
+  </div>
+
+  <!-- ─── Hero ───────────────────────────────── -->
+  <header class="hero">
+    <div>
+      <h1>
+        Aman<br>
+        <span class="last">Sidhu</span><span class="accent">.</span>
+      </h1>
+      <div class="tagline">
+        Machine&nbsp;Learning <span class="x">×</span> Robotics
+      </div>
+    </div>
+    <div class="meta">
+      <strong>Six selected projects</strong> spanning vision–language models, reinforcement learning, computer vision, and metaheuristic optimization. Ordered most recent first.
+      <hr class="meta-rule">
+      <a href="https://github.com/Kuzcop" target="_blank" rel="noopener">github.com/Kuzcop ↗</a>
+    </div>
+  </header>
+
+  <!-- ─── Index strip ────────────────────────── -->
+  <div class="index">
+    <span>Selected Works</span>
+    <span><span class="arrow">↓</span>&nbsp;&nbsp;Most recent first</span>
+  </div>
+
+  <!-- ─── 01 · VLA Case Study ──────────────────── -->
+  <section class="project reveal">
+    <div class="num">01</div>
+    <div class="body">
+      <h2>Vision–Language–Action Model for <span class="em">Construction Automation</span></h2>
+      <div class="tags">
+        Python <span class="pipe">·</span> LLaMA&nbsp;3.2&nbsp;1B <span class="pipe">·</span> YOLO-World&nbsp;v2 <span class="pipe">·</span> LoRA <span class="pipe">·</span> Unsloth <span class="pipe">·</span> WandB
+      </div>
+      <p>An end-to-end pipeline for grounded instruction-following in wheel-loader operation. The system runs YOLO-World detection over dashcam frames, formats the detections into a scene-grounding prompt, and feeds that into a LoRA-fine-tuned LLaMA&nbsp;3.2&nbsp;1B to produce contextual responses to commands like <em>"Where should I go next?"</em> or <em>"Go to the nearest pile and fill the bucket."</em></p>
+      <p>The data pipeline auto-generates VQA training pairs by passing verified pile-detection frames through GPT-4o, then converts the resulting JSONL into HuggingFace dataset format for LoRA fine-tuning. The full inference path produces both annotated frames and structured JSON describing the scene and the model's grounded response.</p>
+      <div class="note">
+        <span class="label">↗ Training Run</span>
+        Full training metrics, loss curves, and qualitative samples are published in the WandB report — <a href="https://wandb.ai/aman-sidhu-mcgill-university/vlam-wheel-loader/reports/Sensmore-VLA-Case-Study--VmlldzoxNTkzNzMyNA?accessToken=825ki9nqt7gg5po7twdbsxnriog89te14qksz6viq7uo09j5lkoyavr6ctz4vyhj" target="_blank" rel="noopener">vlam-wheel-loader / Sensmore VLA Case Study</a>.
+      </div>
+      <a class="repo-cta" href="https://github.com/Kuzcop/VLA_case_study" target="_blank" rel="noopener">View Repository <span class="arrow">↗</span></a>
+    </div>
+  </section>
+
+  <!-- ─── 02 · GRPO ───────────────────────────── -->
+  <section class="project reveal">
+    <div class="num">02</div>
+    <div class="body">
+      <h2>Group Relative Policy Optimization on <span class="em">Countdown</span></h2>
+      <div class="tags">
+        Python <span class="pipe">·</span> Qwen2.5-1.5B <span class="pipe">·</span> GRPO <span class="pipe">·</span> RL <span class="pipe">·</span> HuggingFace <span class="pipe">·</span> WandB
+      </div>
+      <p>A from-scratch reimplementation of Group Relative Policy Optimization — the RL algorithm popularized by DeepSeek-R1 — applied to a Qwen2.5-1.5B language model on the Countdown number-puzzle reasoning task. The setup: given a target integer and a small set of operands, the model must output a sequence of arithmetic operations that reach the target.</p>
+      <p>Includes a configurable dataset generator (operand count, target range, sample size), a flexible training script supporting both HuggingFace and JSON dataset modes, and full hyperparameter exposure for ε, β, μ, batch size, generation count, and learning rate.</p>
+      <div class="note">
+        <span class="label">// Training command</span>
+        <code>python scripts/train.py --base-model=Qwen/Qwen2.5-1.5B --dataset-type=HF --output-dir=./output</code>
+      </div>
+      <a class="repo-cta" href="https://github.com/Kuzcop/COMP579-GRPO" target="_blank" rel="noopener">View Repository <span class="arrow">↗</span></a>
+    </div>
+  </section>
+
+  <!-- ─── 03 · 551 Reddit ──────────────────────── -->
+  <section class="project reveal">
+    <div class="num">03</div>
+    <div class="body">
+      <h2>Cross-Lingual <span class="em">Reddit Subreddit</span> Classification</h2>
+      <div class="tags">
+        Python <span class="pipe">·</span> NLTK <span class="pipe">·</span> spaCy <span class="pipe">·</span> scikit-learn <span class="pipe">·</span> SVM <span class="pipe">·</span> SGD <span class="pipe">·</span> Naive&nbsp;Bayes
+      </div>
+      <p>Four-way classification of 1,400 Reddit posts to one of <strong>Montreal, Melbourne, London, or Paris</strong>. The corpus is mixed English (≈74%) and French (≈26%), so the preprocessing pipeline language-detects each sample and applies the matching lemmatizer (WordNet for English, French LEFFF for French) along with combined NLTK + spaCy stopword removal across both languages.</p>
+      <p>Four models were compared: <strong>Naive Bayes implemented from scratch</strong> with no ML libraries, plus Logistic Regression, linear SVM, and SGD with Huber loss. SGD-Huber and SVM tied at the top with mean 10-fold validation errors of 28.6% and 28.4%, with SGD edging ahead at <strong>72.8% accuracy</strong> on the Kaggle leaderboard.</p>
+      <div class="figs two">
+        <figure class="fig">
+          <img src="https://github.com/Kuzcop/551_Text_Classification_Reddit/raw/main/misc/cm.png" alt="Confusion matrices for the four classifiers" loading="lazy">
+          <figcaption><span class="label">Fig 3.1</span>Confusion matrices across all four classifiers.</figcaption>
+        </figure>
+        <figure class="fig">
+          <img src="https://github.com/Kuzcop/551_Text_Classification_Reddit/raw/main/misc/acc.png" alt="Per-fold validation accuracy" loading="lazy">
+          <figcaption><span class="label">Fig 3.2</span>Validation accuracy by model and fold.</figcaption>
+        </figure>
+      </div>
+      <a class="repo-cta" href="https://github.com/Kuzcop/551_Text_Classification_Reddit" target="_blank" rel="noopener">View Repository <span class="arrow">↗</span></a>
+    </div>
+  </section>
+
+  <!-- ─── 04 · Snake ──────────────────────────── -->
+  <section class="project reveal">
+    <div class="num">04</div>
+    <div class="body">
+      <h2>Snake with <span class="em">Tabular Q-Learning</span> from Scratch</h2>
+      <div class="tags">
+        Summer&nbsp;2023 <span class="pipe">·</span> Python <span class="pipe">·</span> Pygame <span class="pipe">·</span> Gymnasium <span class="pipe">·</span> Stable-Baselines3 <span class="pipe">·</span> PPO <span class="pipe">·</span> A2C
+      </div>
+      <p>A self-directed RL playground. The environment, written from scratch in Pygame and wrapped to the OpenAI Gymnasium interface, allows the same training harness to swap between a custom tabular Q-learning agent and Stable-Baselines3's A2C and PPO. State is encoded as the apple's quadrant (8 directions) plus three boolean wall/body danger flags around the head; actions are turn-left / continue / turn-right.</p>
+      <p>The reward function is intentionally minimal: <strong>+100</strong> for eating the apple, <strong>−1</strong> per step (to encourage efficiency), and <strong>−500</strong> for any collision. After 500 training episodes, the tabular Q-learning agent reaches <strong>51 points</strong> in evaluation.</p>
+      <div class="figs">
+        <figure class="fig">
+          <img src="https://github.com/Kuzcop/snake/raw/main/misc/snake_game.gif" alt="Q-learning Snake agent gameplay" loading="lazy">
+          <figcaption><span class="label">Fig 4.1</span>Q-learning agent gameplay after 500 training episodes.</figcaption>
+        </figure>
+      </div>
+      <a class="repo-cta" href="https://github.com/Kuzcop/snake" target="_blank" rel="noopener">View Repository <span class="arrow">↗</span></a>
+    </div>
+  </section>
+
+  <!-- ─── 05 · Metaheuristics ─────────────────── -->
+  <section class="project reveal">
+    <div class="num">05</div>
+    <div class="body">
+      <h2>Trajectory Metaheuristics for <span class="em">CNN Hyperparameters</span></h2>
+      <div class="tags">
+        Python <span class="pipe">·</span> TensorFlow <span class="pipe">·</span> Tabu&nbsp;Search <span class="pipe">·</span> Simulated&nbsp;Annealing <span class="pipe">·</span> Iterated&nbsp;Local&nbsp;Search <span class="pipe">·</span> CIFAR-10
+      </div>
+      <p>From-scratch implementations of <strong>Tabu Search</strong>, <strong>Simulated Annealing</strong>, and <strong>Iterated Local Search</strong> applied to the architectural hyperparameters of an image-classification CNN trained on CIFAR-10. The objective balances accuracy against test-time latency:</p>
+      <p class="equation">Objective&nbsp;=&nbsp;(Accuracy²)&nbsp;/&nbsp;Latency</p>
+      <p>Each metaheuristic improved on the default hyperparameters along both axes. ILS produced the best overall result: <strong>+4 percentage-point accuracy gain</strong> (68% → 72%) and <strong>16.3% latency reduction</strong>. Simulated Annealing converged to comparable latency in a fraction of the wall-clock time — pointing to a useful intensification/diversification trade-off, where ILS and TS were needed for accuracy gains but SA alone was sufficient when latency was the priority.</p>
+      <div class="figs two">
+        <figure class="fig">
+          <img src="https://github.com/Kuzcop/541/raw/main/misc/dp.png" alt="Optimization pipeline overview" loading="lazy">
+          <figcaption><span class="label">Fig 5.1</span>Optimization pipeline overview.</figcaption>
+        </figure>
+        <figure class="fig">
+          <img src="https://github.com/Kuzcop/541/raw/main/misc/results.png" alt="Final accuracy and latency by metaheuristic" loading="lazy">
+          <figcaption><span class="label">Fig 5.2</span>Final accuracy &amp; latency by metaheuristic.</figcaption>
+        </figure>
+      </div>
+      <a class="repo-cta" href="https://github.com/Kuzcop/541" target="_blank" rel="noopener">View Repository <span class="arrow">↗</span></a>
+    </div>
+  </section>
+
+  <!-- ─── 06 · Traffic Counting ───────────────── -->
+  <section class="project reveal">
+    <div class="num">06</div>
+    <div class="body">
+      <h2>Dashcam <span class="em">Traffic Counting</span> with YOLO &amp; Optical Flow</h2>
+      <div class="tags">
+        Python <span class="pipe">·</span> OpenCV <span class="pipe">·</span> YOLOv8 <span class="pipe">·</span> Farneback&nbsp;Flow <span class="pipe">·</span> K-Means
+      </div>
+      <p>A computer vision pipeline that counts <strong>moving cars, parked cars, and pedestrians</strong> from real-world dashcam footage shot in downtown Montreal. YOLOv8 handles detection and tracking; bounding-box position thresholds (40% of screen for people, 26.5% for cars) decide when an object has been "passed" — calibrated to balance recall against double-counting under occlusion.</p>
+      <p>Moving-vs-parked classification runs in two stages. An initial guess uses screen-region heuristics — moving cars travel down the centre lane, parked cars line the curb. The refinement stage applies <strong>K-Means (K=2)</strong> on Farneback optical-flow magnitudes, exploiting the consistent ordering <code>flow(same-dir) &lt; flow(parked) &lt; flow(opposite-dir)</code>, with the heuristic guess seeding the cluster initialization. Final grade: <strong>93%</strong>.</p>
+      <div class="figs">
+        <figure class="fig">
+          <img src="https://github.com/Kuzcop/415_Traffic_Counting/raw/main/optical_flow.gif" alt="Optical flow visualization on dashcam clip" loading="lazy">
+          <figcaption><span class="label">Fig 6.1</span>Optical-flow visualization on the McGill Drive clip.</figcaption>
+        </figure>
+      </div>
+      <a class="repo-cta" href="https://github.com/Kuzcop/415_Traffic_Counting" target="_blank" rel="noopener">View Repository <span class="arrow">↗</span></a>
+    </div>
+  </section>
+
+  <!-- ─── Footer ──────────────────────────────── -->
+  <footer class="footer">
+    <span>End of selection</span>
+    <span><a href="https://github.com/Kuzcop" target="_blank" rel="noopener">github.com/Kuzcop&nbsp;↗</a></span>
+    <span>Aman&nbsp;Sidhu&nbsp;·&nbsp;2026</span>
+  </footer>
+
+</div>
+
+<script>
+  // Reveal-on-scroll (skips gracefully if IO unsupported)
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('in');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  } else {
+    document.querySelectorAll('.reveal').forEach(el => el.classList.add('in'));
+  }
+</script>
+
+</body>
+</html>
