@@ -6,6 +6,7 @@
 <title>Aman Sidhu — Selected Works</title>
 <meta name="description" content="Selected machine learning and robotics projects by Aman Sidhu (Kuzcop on GitHub).">
 <meta property="og:title" content="Aman Sidhu — Selected Works">
+<meta property="og:description" content="Six selected projects in ML, robotics, computer vision, and reinforcement learning.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -494,6 +495,119 @@ body::before {
   font-weight: 500;
 }
 
+/* ── Profile · Education + Toolkit ──────────────── */
+.profile {
+  padding: 4.5rem 0 3rem;
+  display: grid;
+  grid-template-columns: 7rem 1fr;
+  gap: 2.5rem;
+}
+@media (max-width: 760px) {
+  .profile { grid-template-columns: 1fr; gap: 1rem; padding: 3rem 0 2rem; }
+}
+.profile .stamp {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+  padding-top: 1.4rem;
+  font-weight: 500;
+}
+.profile-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 3.5rem;
+}
+@media (max-width: 760px) {
+  .profile-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+}
+
+.profile-col h3 {
+  font-family: 'Fraunces', serif;
+  font-weight: 380;
+  font-style: italic;
+  font-variation-settings: "opsz" 80;
+  font-size: 1.3rem;
+  letter-spacing: -0.015em;
+  color: var(--ink-soft);
+  margin-bottom: 1.35rem;
+  padding-bottom: 0.65rem;
+  border-bottom: 1px solid var(--rule-strong);
+}
+
+.edu-item {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--rule);
+}
+.edu-item:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+.edu-item .degree {
+  font-family: 'Fraunces', serif;
+  font-weight: 440;
+  font-variation-settings: "opsz" 60;
+  font-size: 1.1rem;
+  line-height: 1.25;
+  color: var(--ink);
+  margin-bottom: 0.35rem;
+  letter-spacing: -0.015em;
+}
+.edu-item .degree .em {
+  font-style: italic;
+  font-weight: 380;
+}
+.edu-item .school {
+  font-size: 0.95rem;
+  color: var(--ink-2);
+  margin-bottom: 0.4rem;
+  line-height: 1.4;
+}
+.edu-item .school .sep {
+  color: var(--accent);
+  margin: 0 0.45em;
+}
+.edu-item .dates {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.66rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+.edu-item .detail {
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+  margin-top: 0.6rem;
+  font-style: italic;
+  line-height: 1.5;
+}
+
+.skill-group {
+  margin-bottom: 1.15rem;
+}
+.skill-group:last-child { margin-bottom: 0; }
+.skill-group .label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.66rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.4rem;
+  font-weight: 500;
+}
+.skill-group .items {
+  font-size: 0.96rem;
+  line-height: 1.55;
+  color: var(--ink-2);
+}
+.skill-group .items .pipe {
+  color: var(--ink-faint);
+  margin: 0 0.45em;
+}
+
 /* ── Footer ────────────────────────────────────── */
 .footer {
   margin-top: 5rem;
@@ -558,12 +672,6 @@ body::before {
       </h1>
       <div class="tagline">
         Machine&nbsp;Learning <span class="x">×</span> Robotics
-      </div>
-      <div class = "meta">
-        
-        <p>
-          aman.sidhu@mail.mcgill.ca
-        </p> 778-939-2380
       </div>
     </div>
     <div class="meta">
@@ -703,18 +811,69 @@ body::before {
     </div>
   </section>
 
+  <!-- ─── Index strip · Background ──────────────── -->
   <div class="index">
-    <span>Education</span>
-    <span><span class="arrow">↓</span>&nbsp;&nbsp;Most recent first</span>
+    <span>Background</span>
+    <span><span class="arrow">§</span>&nbsp;&nbsp;Education &amp; toolkit</span>
   </div>
 
+  <!-- ─── Profile · Education + Toolkit ─────────── -->
+  <section class="profile reveal">
+    <div class="stamp">Profile</div>
+    <div class="profile-grid">
 
+      <!-- Education column -->
+      <div class="profile-col">
+        <h3>Education</h3>
+        <div class="edu-item">
+          <div class="degree">M.Sc. <span class="em">Artificial Intelligence</span></div>
+          <div class="school">McGill University <span class="sep">·</span> Mila</div>
+          <div class="dates">2024 — Present</div>
+          <div class="detail"> GPA: 4/4 </div>
+          <div class="detail">Thesis: Collision-aware E2E autonomous driving with VLAs in long-tail scenarios (Prof. N. Armanfard, iSMART Lab).</div>
+        </div>
+        <div class="edu-item">
+          <div class="degree">B.Eng. <span class="em">Honours Electrical Engineering</span></div>
+          <div class="school">McGill University</div>
+          <div class="dates">2019 — 2024</div>
+          <div class="detail"> GPA: 3.95/4 </div>
+          <div class="detail">Undergraduate research at the Systems Engineering Lab: RL for retail operations (publications above).</div>
+        </div>
+      </div>
+
+      <!-- Toolkit column -->
+      <div class="profile-col">
+        <h3>Toolkit</h3>
+        <div class="skill-group">
+          <div class="label">Deep Learning</div>
+          <div class="items">PyTorch <span class="pipe">·</span> HuggingFace <span class="pipe">·</span> LoRA / QLoRA <span class="pipe">·</span> Unsloth <span class="pipe">·</span> WandB <span class="pipe">·</span> scikit-learn</div>
+        </div>
+        <div class="skill-group">
+          <div class="label">Reinforcement Learning</div>
+          <div class="items">GRPO <span class="pipe">·</span> On/Off-policy Model Training <span class="pipe">·</span> Q-Learning <span class="pipe">·</span> Stable-Baselines3 <span class="pipe">·</span> Gymnasium <span class="pipe">·</span> MuJoCo</div>
+        </div>
+        <div class="skill-group">
+          <div class="label">Robotics &amp; Simulation</div>
+          <div class="items">ROS2 Humble <span class="pipe">·</span> CARLA <span class="pipe">·</span> Gazebo <span class="pipe">·</span> Jetson Orin Nano <span class="pipe">·</span> Raspberry Pi <span class="pipe">·</span> Intel RealSense Cameras</div>
+        </div>
+        <div class="skill-group">
+          <div class="label">Computer Vision</div>
+          <div class="items">YOLO / YOLO-World <span class="pipe">·</span> OpenCV <span class="pipe">·</span> Optical Flow <span class="pipe">·</span> Object Detection &amp; Tracking <span class="pipe">·</span> Open-Vocabulary Segmentation</div>
+        </div>
+        <div class="skill-group">
+          <div class="label">Languages &amp; Tooling</div>
+          <div class="items">Python <span class="pipe">·</span> C / C++ <span class="pipe">·</span> Bash <span class="pipe">·</span> Git <span class="pipe">·</span> Linux <span class="pipe">·</span> Docker <span class="pipe">·</span> LaTeX</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
 
   <!-- ─── Footer ──────────────────────────────── -->
   <footer class="footer">
-    <span>aman.sidhu@mail.mcgill.ca</span>
+    <span>End of selection</span>
     <span><a href="https://github.com/Kuzcop" target="_blank" rel="noopener">github.com/Kuzcop&nbsp;↗</a></span>
-    <span>Aman&nbsp;Sidhu&nbsp;·&nbsp;2026·&nbsp;778-939-2380</span>
+    <span>Aman&nbsp;Sidhu&nbsp;·&nbsp;2026</span>
   </footer>
 
 </div>
